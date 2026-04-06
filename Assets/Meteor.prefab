@@ -49,6 +49,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 3}
+  scaleMin: 0.8
+  scaleMax: 1.45
+  rotateMin: 0
+  rotateMax: 180
 --- !u!114 &1225676387713332369
 MonoBehaviour:
   m_ObjectHideFlags: 0
