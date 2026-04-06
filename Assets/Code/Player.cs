@@ -6,9 +6,9 @@ public class Player : MonoBehaviour
 {
     public int score = 0;
     public int health = 5;
-
+    public GameObject pickupEffect;
     public GameObject shield;
-    private bool isInvincible = false; // ‘лаг неу€звимости
+    private bool isInvincible = false;
 
     void Move()
     {
@@ -27,22 +27,31 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Meteor" && !isInvincible)
+        if (collision.tag == "Meteor")
         {
-            shield.SetActive(true);
-            isInvincible = true; // ¬ключаем неу€звимость
-            Invoke("offShield", 3f);
-            Invoke("offInvincible", 3f); // ¬ыключаем неу€звимость через 3 секунды
+            if (!isInvincible)
+            {
+                // ѕотенциально можно снизить здоровье или проиграть жизнь
+                health--;
+                if (health <= 0)
+                {
+                    GameObject effect = Instantiate(pickupEffect, transform.position, transform.rotation);
+                    Destroy(effect, 5);
+                    Destroy(gameObject);
+                }
+                // јктивируем щит и неу€звимость
+                shield.SetActive(true);
+                isInvincible = true;
+                Invoke("OffShieldAndInvincible", 3f);
+            }
+            // уничтожаем метеор
+            Destroy(collision.gameObject);
         }
     }
 
-    private void offShield()
+    private void OffShieldAndInvincible()
     {
         shield.SetActive(false);
-    }
-
-    private void offInvincible()
-    {
         isInvincible = false;
     }
 }

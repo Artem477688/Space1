@@ -41,7 +41,7 @@ public class SpawnLaser : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("Laser prefab не содержит Rigidbody");
+               
             }
         }
         else

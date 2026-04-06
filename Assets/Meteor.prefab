@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f140fff49d0b9d42a4770c300982bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupEffect: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 3}
 --- !u!114 &1225676387713332369
 MonoBehaviour:
   m_ObjectHideFlags: 0
