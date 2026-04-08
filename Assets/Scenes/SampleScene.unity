@@ -15739,5 +15739,7 @@ MonoBehaviour:
     weight: 45
   - prefab: {fileID: 4627034332300648007, guid: a808d5f8eea6b5c4ea1a9a2d2d62169c, type: 3}
     weight: 37.5
+  - prefab: {fileID: 8329394472367449164, guid: 5e483f0d189518e4c89ce11ac35820d4, type: 3}
+    weight: 15
   spawnPoint: {fileID: 2116725888}
   fireInterval: 3

@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Meteor")
+        if (collision.tag == "Meteor" || collision.tag == "EnemyBullet")
         {
             if (!isInvincible)
             {

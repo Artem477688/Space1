@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5379619336282592061}
   - component: {fileID: 5379619336282592060}
   - component: {fileID: 5379619336282592063}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LaserPrebaf
   m_TagString: Bullet
   m_Icon: {fileID: 0}

@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4178490750656485988
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5379619336274709083, guid: 769a6bc0cf1b64142904588abd473190, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379619336274709083, guid: 769a6bc0cf1b64142904588abd473190, type: 3}
+      propertyPath: m_Color.g
+      value: 0.71616596
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379619336274709083, guid: 769a6bc0cf1b64142904588abd473190, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379619336282592062, guid: 769a6bc0cf1b64142904588abd473190, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379619336282592062, guid: 769a6bc0cf1b64142904588abd473190, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.284283
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379619336282592062, guid: 769a6bc0cf1b64142904588abd473190, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.6658344
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379619336282592062, guid: 769a6bc0cf1b64142904588abd473190, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379619336282592062, guid: 769a6bc0cf1b64142904588abd473190, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379619336282592062, guid: 769a6bc0cf1b64142904588abd473190, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379619336282592062, guid: 769a6bc0cf1b64142904588abd473190, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379619336282592062, guid: 769a6bc0cf1b64142904588abd473190, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379619336282592062, guid: 769a6bc0cf1b64142904588abd473190, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379619336282592062, guid: 769a6bc0cf1b64142904588abd473190, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379619336282592062, guid: 769a6bc0cf1b64142904588abd473190, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379619336282592067, guid: 769a6bc0cf1b64142904588abd473190, type: 3}
+      propertyPath: m_Name
+      value: LaserPrebafEnemy Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379619336282592067, guid: 769a6bc0cf1b64142904588abd473190, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379619336282592067, guid: 769a6bc0cf1b64142904588abd473190, type: 3}
+      propertyPath: m_TagString
+      value: EnemyBullet
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5379619336282592063, guid: 769a6bc0cf1b64142904588abd473190, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 769a6bc0cf1b64142904588abd473190, type: 3}
+--- !u!1 &8310483242143762727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5379619336282592067, guid: 769a6bc0cf1b64142904588abd473190, type: 3}
+  m_PrefabInstance: {fileID: 4178490750656485988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8593223604222495928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8310483242143762727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da61355a4fdf8dd4681c1cef73ba4ca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
