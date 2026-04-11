@@ -23,6 +23,12 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+        if (health <= 0)
+        {
+            GameObject effect = Instantiate(pickupEffect, transform.position, transform.rotation);
+            Destroy(effect, 5);
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,6 +49,26 @@ public class Player : MonoBehaviour
                 shield.SetActive(true);
                 isInvincible = true;
                 Invoke("OffShieldAndInvincible", 3f);
+            }
+            // уничтожаем метеор
+            Destroy(collision.gameObject);
+        }
+        if (collision.tag == "MeteorV1")
+        {
+            if (!isInvincible)
+            {
+                // Потенциально можно снизить здоровье или проиграть жизнь
+                health -= 3;
+                if (health <= 0)
+                {
+                    GameObject effect = Instantiate(pickupEffect, transform.position, transform.rotation);
+                    Destroy(effect, 5);
+                    Destroy(gameObject);
+                }
+                // Активируем щит и неуязвимость
+                shield.SetActive(true);
+                isInvincible = true;
+                Invoke("OffShieldAndInvincible", 6f);
             }
             // уничтожаем метеор
             Destroy(collision.gameObject);

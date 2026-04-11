@@ -9,6 +9,8 @@ TagManager:
   - Bonus
   - EnemyBullet
   - Shield
+  - MeteorV1
+  - Enemy
   layers:
   - Default
   - TransparentFX

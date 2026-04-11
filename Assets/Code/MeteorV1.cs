@@ -2,55 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Meteor : MonoBehaviour
+public class MeteorV1 : MonoBehaviour
 {
     public GameObject pickupEffect;
     public float scaleMin = 0.8f;
     public float scaleMax = 1.45f;
-    public float rotateMin = 20f; // например, минимальна€ скорость
-    public float rotateMax = 180f; // максимальна€ скорость
+    public float rotateMin = 0f;
+    public float rotateMax = 180f;
+    public Player player;
 
-    private float rotationDirection; // 1 или -1, направление вращени€
-    private float rotationRate; // выбранна€ скорость вращени€
+    private float rotationDirection; // 1 или -1 дл€ выбора направлени€ вращени€
 
     void Start()
     {
         RandomSize();
-        RandomRotation(); // начальный рандомный наклон
-        RandomRotationDirection(); // выбираем направление вращени€
-        PickRotationSpeed(); // выбираем рандомную скорость вращени€
+        RandomRotationDirection(); // выбираем случайное направление вращени€
+        RandomRotation();
         Destroy(gameObject, 8);
     }
 
     void RandomRotationDirection()
     {
-        // 50% шанс выбрать вращение по часовой или против
+        // — веро€тностью 50% выбираем вращение по часовой или против
         rotationDirection = Random.value < 0.5f ? 1f : -1f;
     }
 
     void RandomRotation()
     {
         float rotationFactor = Random.Range(rotateMin, rotateMax);
-        // ”станавливаем начальный наклон
-        transform.localEulerAngles = new Vector3(0, 0, rotationFactor * rotationDirection);
-    }
-
-    void PickRotationSpeed()
-    {
-        // выбираем рандомную скорость между rotateMin и rotateMax
-        rotationRate = Random.Range(rotateMin, rotateMax);
-    }
-
-    void Update()
-    {
-        // посто€нно вращаем с выбранной скоростью
-        transform.Rotate(0, 0, rotationRate * rotationDirection * Time.deltaTime);
+        // ”множаем на направление
+        transform.localEulerAngles = Vector3.forward * rotationFactor * rotationDirection;
     }
 
     void RandomSize()
     {
         float scaleFactor = Random.Range(scaleMin, scaleMax);
         transform.localScale = (Vector2)transform.localScale * scaleFactor;
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -64,6 +52,26 @@ public class Meteor : MonoBehaviour
 
         if (collision.tag == "Bullet")
         {
+            // Ќаходим игрока на сцене по тегу
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null)
+            {
+                Player player = playerObj.GetComponent<Player>();
+                if (player != null)
+                {
+                    player.score += 35000; // ”величиваем счЄт, как хотите
+                    player.health -= 1;
+                }
+                else
+                {
+                    Debug.LogWarning(" омпонент Player не найден у объекта с тегом 'Player'");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("ќбъект с тегом 'Player' не найден");
+            }
+
             Destroy(collision.gameObject);
             GameObject effect = Instantiate(pickupEffect, transform.position, transform.rotation);
             Destroy(effect, 5);

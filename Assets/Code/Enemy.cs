@@ -34,6 +34,13 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if (health <= 0)
+        {
+            GameObject effect = Instantiate(pickupEffect, transform.position, transform.rotation);
+            Destroy(effect, 5);
+            Destroy(gameObject);
+        }
+
         // Проверяем все объекты на нужных слоях
         Collider2D[] meteors = Physics2D.OverlapCircleAll(transform.position, checkRadius, meteorLayer);
         Collider2D[] bullets = Physics2D.OverlapCircleAll(transform.position, checkRadius, bulletLayer);
@@ -55,6 +62,8 @@ public class Enemy : MonoBehaviour
                 break;
             }
         }
+
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -75,6 +84,26 @@ public class Enemy : MonoBehaviour
                 shield.SetActive(true);
                 isInvincible = true;
                 Invoke("OffShieldAndInvincible", 3f);
+            }
+            // уничтожаем метеор
+            Destroy(collision.gameObject);
+        }
+        if (collision.tag == "MeteorV1")
+        {
+            if (!isInvincible)
+            {
+                // Потенциально можно снизить здоровье или проиграть жизнь
+                health -= 3;
+                if (health <= 0)
+                {
+                    GameObject effect = Instantiate(pickupEffect, transform.position, transform.rotation);
+                    Destroy(effect, 5);
+                    Destroy(gameObject);
+                }
+                // Активируем щит и неуязвимость
+                shield.SetActive(true);
+                isInvincible = true;
+                Invoke("OffShieldAndInvincible", 6f);
             }
             // уничтожаем метеор
             Destroy(collision.gameObject);

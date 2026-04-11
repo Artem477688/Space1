@@ -15781,7 +15781,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2116725888}
-  - component: {fileID: 2116725887}
+  - component: {fileID: 2116725890}
   - component: {fileID: 2116725889}
   m_Layer: 0
   m_Name: SpwnM&B
@@ -15790,21 +15790,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2116725887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2116725886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 498b217225b3c444fab20c2e3891fbcf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MeteorPrefab: {fileID: 1225676387713332461, guid: c6e688c1acd95c54a9187ea1cedc5f2a, type: 3}
-  spawnPoint: {fileID: 2116725888}
-  fireInterval: 0.5
 --- !u!4 &2116725888
 Transform:
   m_ObjectHideFlags: 0
@@ -15833,7 +15818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonusOptions:
-  - prefab: {fileID: 1225676387713332461, guid: c6e688c1acd95c54a9187ea1cedc5f2a, type: 3}
+  - prefab: {fileID: 1014945504013695374, guid: 5ad5846a847c98d4fae00b4b73fb4592, type: 3}
     weight: 80
   - prefab: {fileID: 7488243051413950792, guid: 4d41060edd5d8024ea4485c6a3b37c61, type: 3}
     weight: 60
@@ -15849,3 +15834,26 @@ MonoBehaviour:
     weight: 30
   spawnPoint: {fileID: 2116725888}
   fireInterval: 3
+--- !u!114 &2116725890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116725886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5794e7e330ebea4984e08a9fe000f32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonusOptions:
+  - prefab: {fileID: 1014945504013695374, guid: 5ad5846a847c98d4fae00b4b73fb4592, type: 3}
+    weight: 10000
+  - prefab: {fileID: 4724034541830735078, guid: 697beb2a40db4f34099b4eec6bfd5545, type: 3}
+    weight: 10000
+  - prefab: {fileID: 1171284470814241580, guid: b770dde18011cc343b49bbccf024ccf7, type: 3}
+    weight: 10000
+  - prefab: {fileID: 7567656798310045857, guid: 725e1cdde3919c343a02f27f57924bc0, type: 3}
+    weight: 1
+  spawnPoint: {fileID: 2116725888}
+  fireInterval: 0.5
