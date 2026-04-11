@@ -15,6 +15,7 @@ public class FIBoost : MonoBehaviour
     private void Start()
     {
           spawnLaserScript = GetComponent<SpawnLaser>();
+        Destroy(gameObject, 8);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

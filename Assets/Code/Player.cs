@@ -47,6 +47,13 @@ public class Player : MonoBehaviour
             // уничтожаем метеор
             Destroy(collision.gameObject);
         }
+        if (collision.tag == "Shield")
+        {
+            shield.SetActive(true);
+            isInvincible = true;
+            Invoke("OffShieldAndInvincible", 3f);
+
+        }
     }
 
     private void OffShieldAndInvincible()

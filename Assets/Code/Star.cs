@@ -6,6 +6,11 @@ public class Star : MonoBehaviour
 {
     public GameObject pickupEffect;
 
+    void Start()
+    {
+        Destroy(gameObject, 8);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
