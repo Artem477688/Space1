@@ -11,6 +11,7 @@ TagManager:
   - Shield
   - MeteorV1
   - Enemy
+  - MeteorStop
   layers:
   - Default
   - TransparentFX

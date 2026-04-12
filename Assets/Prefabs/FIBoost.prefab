@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7877811494023734880}
   m_Layer: 0
   m_Name: FIBoost
-  m_TagString: Untagged
+  m_TagString: Bonus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
