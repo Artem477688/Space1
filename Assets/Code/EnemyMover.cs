@@ -9,7 +9,7 @@ public class EnemyMover : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, 5f);
+
     }
 
     // Update is called once per frame
