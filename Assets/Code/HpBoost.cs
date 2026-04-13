@@ -16,7 +16,7 @@ public class HpBoost : MonoBehaviour
         if (collision.tag == "Player")
         {
             collision.GetComponent<Player>().health += 1;
-            
+            collision.GetComponent<PlayerMenu>().health += 1;
             Destroy(this.gameObject);
         }
     }
