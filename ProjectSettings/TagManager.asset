@@ -12,6 +12,7 @@ TagManager:
   - MeteorV1
   - Enemy
   - MeteorStop
+  - HPBoost
   layers:
   - Default
   - TransparentFX

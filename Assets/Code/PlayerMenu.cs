@@ -80,6 +80,11 @@ public class PlayerMenu : MonoBehaviour
             Invoke("OffShieldAndInvincible", 3f);
 
         }
+        if (collision.tag == "HPBoost")
+        {
+            collision.GetComponent<PlayerMenu>().health += 1;
+            Destroy(collision.gameObject);
+        }
     }
 
     private void OffShieldAndInvincible()
